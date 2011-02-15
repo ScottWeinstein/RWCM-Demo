@@ -3,15 +3,13 @@
 <head>
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
 </head>
 
 <body>
     <div class="page">
-
         <div id="header">
             <div id="title">
-                <h1>My MVC Application</h1>
+                <h1>Real world configuration management</h1>
             </div>
 
             <div id="logindisplay">
@@ -19,11 +17,10 @@
             </div>
 
             <div id="menucontainer">
-
                 <ul id="menu">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Admin", "Diag","Admin")</li>
                 </ul>
-
             </div>
         </div>
 
