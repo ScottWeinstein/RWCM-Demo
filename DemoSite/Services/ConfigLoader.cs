@@ -9,15 +9,17 @@ using System.Reflection;
 using System.IO;
 using System.Diagnostics;
 using System.Collections;
+using DemoSite.Models;
 
 namespace DemoSite.Services
 {
     public class ConfigLoader
     {
+        public DemoConfig DemoConfig { get; private set; }
         public ConfigLoader(string env, string location)
         {
             var scriptFile = Path.Combine(location, @"..\Scripts\Get-Config.ps1");
-            GetConfigRaw(env, scriptFile);
+            DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFile));
         }
         public ConfigLoader(string env)
         {
@@ -25,10 +27,14 @@ namespace DemoSite.Services
             var scriptFile = sfd.Item1;
             using (sfd.Item2)
             {
-                GetConfigRaw(env, scriptFile);
+                DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFile));
             }
         }
-        private static void GetConfigRaw(string env, string scriptFile)
+        public DemoConfig CreateDemoConfig(Hashtable ht)
+        {
+            return new DemoConfig();
+        }
+        private static Hashtable GetConfigRaw(string env, string scriptFile)
         {
             using (var runspace = RunspaceFactory.CreateRunspace())
             {
@@ -42,7 +48,11 @@ namespace DemoSite.Services
                     
                     Collection<PSObject> results = pipeline.Invoke();
                     var res = results[0].BaseObject as Hashtable;
-
+                    if (res == null)
+                    {
+                        throw new Exception("Missing Config");
+                    }
+                    return res;
                 }
             }
         }
