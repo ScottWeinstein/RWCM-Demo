@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using System.IO;
 using System.Diagnostics;
+using System.Collections;
 
 namespace DemoSite.Services
 {
@@ -15,7 +16,7 @@ namespace DemoSite.Services
     {
         public ConfigLoader(string env, string location)
         {
-            var scriptFile = Path.Combine(location, @"bin\Get-Config.ps1");
+            var scriptFile = Path.Combine(location, @"..\Scripts\Get-Config.ps1");
             GetConfigRaw(env, scriptFile);
         }
         public ConfigLoader(string env)
@@ -33,13 +34,15 @@ namespace DemoSite.Services
             {
                 using (var pipeline = runspace.CreatePipeline())
                 {
-                    Command getConfigCmd = new Command(scriptFile, true);
+                    Command getConfigCmd = new Command(scriptFile);
                     CommandParameter envParam = new CommandParameter("Env", env);
                     getConfigCmd.Parameters.Add(envParam);
                     pipeline.Commands.Add(getConfigCmd);
                     runspace.Open();
+                    
                     Collection<PSObject> results = pipeline.Invoke();
-                    var res = results[0].BaseObject;
+                    var res = results[0].BaseObject as Hashtable;
+
                 }
             }
         }

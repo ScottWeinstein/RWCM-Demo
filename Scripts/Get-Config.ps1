@@ -1,9 +1,33 @@
-﻿param([string]$Env="NA")
+﻿param([string]$Env="NA", [Uri]$envFileUri=$null, [string]$EnvFileContent="" )
 $ErrorActionPreference="stop"
 $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
 
-$envFile = Join-Path $PSScriptRoot  "..\DemoSite\Env.xml"
-$envX = ([xml](Get-Content $envFile)).Env
+if ($EnvFileContent -eq "")
+{
+	if ($envFileUri -eq $null )
+	{
+		$envFile = Join-Path $PSScriptRoot  "..\DemoSite\Env.xml"
+		$envFileContent = Get-Content $envFile
+	}
+	elseif ($envFileUri.IsFile)
+	{
+		$envFileContent = Get-Content $envFileUri.LocalPath
+	}
+	elseif ($envFileUri.Scheme -eq "http")
+	{
+		$wc = New-Object Net.WebClient
+		$envFileContent = $wc.DownloadString($envFileUri)
+	}
+}
+
+if ($EnvFileContent -eq "")
+{
+	Write-Error "unable to get EnvFileContent"
+}
+	
+
+$envX = ([xml]$envFileContent).Env
+	
 
 $validEnvs = $envX.GetEnumerator() | % {$_.Name}
 if ($validEnvs -notcontains $Env)
