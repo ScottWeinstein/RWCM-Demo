@@ -20,21 +20,21 @@
             DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFile));
         }
 
-        public ConfigLoader(Tuple<string,string> args)
+        public ConfigLoader(Tuple<string, string> args)
         {
             // to work-around powershell bug
-            var env =args.Item1;
+            var env = args.Item1;
             var xmlDefn = args.Item2;
 
             var sfd = GetScriptFile();
             var scriptFile = sfd.Item1;
             using (sfd.Item2)
             {
-                DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFile,xmlDefn));
+                DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFile, xmlDefn));
             }
         }
 
-        public DemoConfig CreateDemoConfig(Hashtable ht)
+        private DemoConfig CreateDemoConfig(Hashtable ht)
         {
             return new DemoConfig();
         }
@@ -70,8 +70,7 @@
             }
         }
         
-
-        private static Tuple<string, IDisposable> GetScriptFile()
+        private Tuple<string, IDisposable> GetScriptFile()
         {
             var scriptFile = Path.GetTempFileName();
             scriptFile = Path.ChangeExtension(scriptFile, "ps1");

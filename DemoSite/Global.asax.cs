@@ -1,10 +1,9 @@
-﻿using System.Configuration;
+﻿
 namespace DemoSite
 {
     #region NS
+    using System.Configuration;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
@@ -34,7 +33,6 @@ namespace DemoSite
 
         protected void Application_Start()
         {
-            
             var builder = BuildAutofac();
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
@@ -54,7 +52,7 @@ namespace DemoSite
             builder.RegisterModelBinderProvider();
             builder.RegisterModule(new AutofacWebTypesModule());
 
-            string serverMapPath = "";
+            string serverMapPath = string.Empty;
             if (!isTestLoad)
             {
                 serverMapPath = Server.MapPath("~");
@@ -67,7 +65,6 @@ namespace DemoSite
                 var cll = new Services.ConfigLoader(env, serverMapPath);
                 return cll.DemoConfig;
             }).SingleInstance();
-
 
             return builder;
         }

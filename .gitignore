@@ -7,3 +7,4 @@
 *.csproj.user
 StyleCop.Cache
 *.suo
+bin
