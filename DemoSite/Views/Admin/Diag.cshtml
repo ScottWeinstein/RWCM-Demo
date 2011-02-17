@@ -1,18 +1,14 @@
 ﻿@model DemoSite.Models.DiagInfo
 
-@{
-    ViewBag.Title = "Diag";
-}
-
-<h2>Diag</h2>
-
 <fieldset>
-    <legend>DiagInfo</legend>
+    <legend>Config info</legend>
 
-    
     <div class="display-label">IsOK</div>
     <div class="display-field">@Model.IsOK</div>
+</fieldset>
 
+<fieldset>
+    <legend>Diag info</legend>
     <table>
         <thead>
         <tr>
@@ -29,15 +25,10 @@
                     <td>@dsi.Name</td>
                     <td>@dsi.Value</td>
                     <td style="background-color:@color">@dsi.IsOK</td>
-                    <td>@dsi.Exception ?? ""</td>
+                    <td><pre>@dsi.Exception ?? ""</pre></td>
                 </tr>
             }
         </tbody>
     </table>
 
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-
