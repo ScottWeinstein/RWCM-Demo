@@ -3,8 +3,31 @@
 <fieldset>
     <legend>Config info</legend>
 
-    <div class="display-label">IsOK</div>
-    <div class="display-field">@Model.IsOK</div>
+    <table>
+        <thead>
+        <tr>
+            <th>Item</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IsOK</td> <td>@Model.IsOK</td>
+            </tr>
+            <tr>
+                <td>Env</td> <td>@Model.Config.Env</td>
+            </tr>
+            <tr>
+                <td>Support Email</td> <td>@Model.Config.SupportEmail</td>
+            </tr>
+            <tr>
+                <td>Production</td> <td>@Model.Config.IsProduction</td>
+            </tr>
+            <tr>
+                <td>App version</td> <td>@Model.AppVersion</td>
+            </tr>
+        </tbody>
+    </table>
 </fieldset>
 
 <fieldset>
@@ -21,11 +44,12 @@
         <tbody>
             @foreach (var dsi in Model.StatusItems) {
                 var color = (dsi.IsOK) ? "inherit" : "Fuchsia";
+                var okText = (dsi.IsOK) ? "Y" : "NO";
                 <tr>
                     <td>@dsi.Name</td>
                     <td>@dsi.Value</td>
-                    <td style="background-color:@color">@dsi.IsOK</td>
-                    <td><pre>@dsi.Exception ?? ""</pre></td>
+                    <td style="background-color:@color">@okText</td>
+                    <td style="font-family: Consolas;font-size:8pt">@(dsi.Exception??"")</td>
                 </tr>
             }
         </tbody>

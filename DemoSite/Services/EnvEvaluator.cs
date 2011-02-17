@@ -19,6 +19,7 @@ namespace DemoSite.Services
             var dstats = new List<DiagStatusItem>();
 
             dstats.Add(EvaluateFilesystemPath(() => config.FileShare));
+            dstats.Add(EvaluateSQLConnectionString(() => config.SqlCS));
 
             return new DiagInfo(config,dstats);
         }
@@ -42,6 +43,24 @@ namespace DemoSite.Services
             return dinfo;
         }
 
+        static DiagStatusItem EvaluateSQLConnectionString(Expression<Func<string>> propGetter)
+        {
+            var parts = GetExprParts(propGetter);
+            var dinfo = new DiagStatusItem() { Name = parts.Item1, Value = parts.Item2 };
+
+            try
+            {
+                using (var conn = new System.Data.SqlClient.SqlConnection(dinfo.Value))
+                {
+                    conn.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                dinfo.Exception = ex.ToString();
+            }
+            return dinfo;
+        }
         private static Tuple<string, T> GetExprParts<T>(Expression<Func<T>> propGetter)
         {
             var mexp = propGetter.Body as MemberExpression;

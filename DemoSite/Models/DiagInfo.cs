@@ -1,3 +1,4 @@
+using System.Reflection;
 namespace DemoSite.Models
 {
     using DemoSite.Services;
@@ -11,6 +12,7 @@ namespace DemoSite.Models
         {
             Config = config;
             StatusItems = dstats;
+            AppVersion = this.GetType().Assembly.GetName().Version.ToString();
         }
         
         public IEnumerable<DiagStatusItem> StatusItems { get; private set; }
@@ -19,6 +21,8 @@ namespace DemoSite.Models
         {
             get { return StatusItems.All(dsi => dsi.IsOK); }
         }
+
+        public string AppVersion { get; private set; }
 
         public DemoConfig Config { get; private set; }
         
