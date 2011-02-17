@@ -23,7 +23,7 @@ namespace Tests
             var ht = new System.Collections.Hashtable();
             ht["FileShare"] = @"q:\IDontExist";
             DemoConfig cfg = new DemoConfig(ht);
-            DiagInfo status = EnvEvaluator.Evaluate(cfg);
+            var status = EnvEvaluator.EvaluateFilesystemPath(() => cfg.FileShare);
             Assert.False(status.IsOK);
         }
 
@@ -33,7 +33,7 @@ namespace Tests
             var ht = new System.Collections.Hashtable();
             ht["FileShare"] = Path.GetTempPath();
             DemoConfig cfg = new DemoConfig(ht);
-            DiagInfo status = EnvEvaluator.Evaluate(cfg);
+            var status = EnvEvaluator.EvaluateFilesystemPath(() => cfg.FileShare);
             Assert.True(status.IsOK);
         }
 
