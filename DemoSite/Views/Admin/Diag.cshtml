@@ -1,4 +1,4 @@
-﻿@model DemoSite.Models.DemoConfig
+﻿@model DemoSite.Models.DiagInfo
 
 @{
     ViewBag.Title = "Diag";
@@ -7,7 +7,34 @@
 <h2>Diag</h2>
 
 <fieldset>
-    <legend>DemoConfig</legend>
+    <legend>DiagInfo</legend>
+
+    
+    <div class="display-label">IsOK</div>
+    <div class="display-field">@Model.IsOK</div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Item</th>
+            <th>Value</th>
+            <th>IsOk</th>
+            <th>Error</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var dsi in Model.StatusItems) {
+                var color = (dsi.IsOK) ? "inherit" : "Fuchsia";
+                <tr>
+                    <td>@dsi.Name</td>
+                    <td>@dsi.Value</td>
+                    <td style="background-color:@color">@dsi.IsOK</td>
+                    <td>@dsi.Exception ?? ""</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |

@@ -6,6 +6,7 @@
     using System.Web;
     using System.Web.Mvc;
     using DemoSite.Models;
+    using DemoSite.Services;
 
     public class AdminController : Controller
     {
@@ -18,7 +19,7 @@
 
         public ActionResult Diag()
         {
-            return View(_config);
+            return View(EnvEvaluator.Evaluate(_config));
         }
     }
 }

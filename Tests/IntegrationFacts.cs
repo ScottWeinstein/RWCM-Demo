@@ -1,10 +1,12 @@
-﻿namespace Tests
+﻿using System.IO;
+namespace Tests
 {
     using System;
     using Autofac;
     using DemoSite.Models;
     using Xunit;
     using DemoSite.Services;
+    using System.Linq;
 
     public class IntegrationFacts
     {
@@ -16,11 +18,23 @@
         }
 
         [Fact]
-        public void Test()
+        public void Bad_filepath_is_detected()
         {
-            DemoConfig cfg = AutofacContainer.Container.Resolve<DemoConfig>();
-            var status = EnvEvaluator.Evaluate(cfg);
+            var ht = new System.Collections.Hashtable();
+            ht["FileShare"] = @"q:\IDontExist";
+            DemoConfig cfg = new DemoConfig(ht);
+            DiagInfo status = EnvEvaluator.Evaluate(cfg);
+            Assert.False(status.IsOK);
+        }
 
+        [Fact]
+        public void Good_filepath_is_validated()
+        {
+            var ht = new System.Collections.Hashtable();
+            ht["FileShare"] = Path.GetTempPath();
+            DemoConfig cfg = new DemoConfig(ht);
+            DiagInfo status = EnvEvaluator.Evaluate(cfg);
+            Assert.True(status.IsOK);
         }
 
     }

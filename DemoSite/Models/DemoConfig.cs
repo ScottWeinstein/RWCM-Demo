@@ -6,7 +6,7 @@
     public class DemoConfig
     {
         private readonly Hashtable _ht;
-        internal DemoConfig(Hashtable ht)
+        public DemoConfig(Hashtable ht)
         {
             _ht = ht;
         }
