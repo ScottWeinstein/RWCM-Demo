@@ -3,3 +3,7 @@
 /DemoSite/Content/themes/
 /DemoSite/Scripts/
 /DemoSite/bin/
+*obj/
+*.csproj.user
+StyleCop.Cache
+*.suo

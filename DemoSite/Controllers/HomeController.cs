@@ -1,8 +1,8 @@
-﻿using System;
-using System.Web.Mvc;
-
-namespace DemoSite.Controllers
+﻿namespace DemoSite.Controllers
 {
+    using System;
+    using System.Web.Mvc;
+    
     public class HomeController : Controller
     {
         public ActionResult Index()
