@@ -87,6 +87,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\ConfigLoader.cs" />
+    <Compile Include="Services\DiagInfo.cs" />
+    <Compile Include="Services\EnvEvaluator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />

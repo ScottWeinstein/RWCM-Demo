@@ -44,6 +44,7 @@ $Config.ASCS 			= "Data Source={0};Catalog=myDataBase;" -f $envRaw.SSASHost
 $Config.SqlEFCS 		= "metadata=.\AdventureWorks.csdl|.\AdventureWorks.ssdl|.\AdventureWorks.msl;provider=System.Data.SqlClient;provider connection string='Data Source={0};Initial Catalog=AdventureWorks;Integrated Security=True;Connection Timeout=60; multipleactiveresultsets=true'" -f  $envRaw.SqlHost
 $Config.FileShare 		= $envRaw.FileShare;
 $Config.SupportEmail 	= $envRaw.SupportEmail;
+$Config.IsProduction	= ($Env -eq "Prod")
 $Config
 
 

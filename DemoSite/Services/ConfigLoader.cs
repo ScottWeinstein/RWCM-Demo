@@ -20,9 +20,8 @@
             DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFile));
         }
 
-        public ConfigLoader(Tuple<string, string> args)
+        public ConfigLoader(Tuple<string, string> args /* to work-around powershell bug in method resolve*/)
         {
-            // to work-around powershell bug
             var env = args.Item1;
             var xmlDefn = args.Item2;
 
@@ -36,7 +35,7 @@
 
         private DemoConfig CreateDemoConfig(Hashtable ht)
         {
-            return new DemoConfig();
+            return new DemoConfig(ht);
         }
 
         private Hashtable GetConfigRaw(string env, string scriptFile, string xmlDefn = null)
