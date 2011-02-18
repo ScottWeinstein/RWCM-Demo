@@ -27,26 +27,21 @@
             get { return (string)_ht["FileShare"]; }
         }
 
-        public string SqlEFCS
+        public string ProductEFConnectionString
         {
-            get { return (string)_ht["SqlEFCS"]; }
-        }
-
-        public string SqlCS
-        {
-            get { return (string)_ht["SqlCS"]; }
-        }
-
-        public string ASCS
-        {
-            get { return (string)_ht["ASCS"]; }
+            get { return (string)_ht["ProductEFConnectionString"]; }
         }
 
         public string LoggingDBConnectionString
         {
             get { return (string)_ht["LoggingDBConnectionString"]; }
         }
-        
+
+        public string MarketingASConnectionString
+        {
+            get { return (string)_ht["MarketingASConnectionString"]; }
+        }
+
         public string Env
         {
             get { return (string)_ht["Env"]; }

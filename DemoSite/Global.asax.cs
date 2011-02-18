@@ -17,6 +17,8 @@
     {
         private static IContainer _Container;
 
+        #region Vanilla MVC stuff
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -32,6 +34,7 @@
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
         }
+        #endregion
         
         protected void Application_Start()
         {
@@ -100,6 +103,7 @@
             }).SingleInstance();
 
             builder.Register<LoggingDBDataContext>(ctx => new LoggingDBDataContext(ctx.Resolve<DemoConfig>().LoggingDBConnectionString));
+            builder.Register<ProductEF>(ctx => new ProductEF(ctx.Resolve<DemoConfig>().ProductEFConnectionString));
 
             return builder;
         }

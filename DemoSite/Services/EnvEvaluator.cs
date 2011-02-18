@@ -13,7 +13,7 @@ namespace DemoSite.Services
             var dstats = new List<DiagStatusItem>();
 
             dstats.Add(EvaluateFilesystemPath(() => config.FileShare));
-            dstats.Add(EvaluateSQLConnectionString(() => config.SqlCS));
+            dstats.Add(EvaluateSQLConnectionString(() => config.LoggingDBConnectionString));
             dstats.Add(EvaluateSQLConnectionString(() => config.LoggingDBConnectionString));
 
             return new DiagInfo(config, dstats);

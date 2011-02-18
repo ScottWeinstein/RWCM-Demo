@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DemoSite.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FileShare" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\temp\FileShare\Dev3</Value>
+    </Setting>
+    <Setting Name="SupportEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sweinstein@lab49.com</Value>
+    </Setting>
+    <Setting Name="FTPPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Dev3FTPPassword</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

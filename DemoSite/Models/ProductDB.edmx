@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DestSQLDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DestSQLDatabaseModelStoreContainer">
+          <EntitySet Name="DimSide" EntityType="DestSQLDatabaseModel.Store.DimSide" store:Type="Tables" Schema="DW" />
+          <EntitySet Name="DimSymbol" EntityType="DestSQLDatabaseModel.Store.DimSymbol" store:Type="Tables" Schema="DW" />
+          <EntitySet Name="FactTrades" EntityType="DestSQLDatabaseModel.Store.FactTrades" store:Type="Tables" Schema="DW" />
+          <EntitySet Name="Accounts" EntityType="DestSQLDatabaseModel.Store.Accounts" store:Type="Tables" Schema="staging" />
+          <EntitySet Name="Desks" EntityType="DestSQLDatabaseModel.Store.Desks" store:Type="Tables" Schema="staging" />
+          <EntitySet Name="SrcTableSmall" EntityType="DestSQLDatabaseModel.Store.SrcTableSmall" store:Type="Tables" store:Schema="staging" store:Name="SrcTableSmall">
+            <DefiningQuery>SELECT 
+      [SrcTableSmall].[column_1] AS [column_1], 
+      [SrcTableSmall].[column_2] AS [column_2], 
+      [SrcTableSmall].[column_3] AS [column_3]
+      FROM [staging].[SrcTableSmall] AS [SrcTableSmall]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Symbols" EntityType="DestSQLDatabaseModel.Store.Symbols" store:Type="Tables" Schema="staging" />
+          <EntitySet Name="TradersToDesksMap" EntityType="DestSQLDatabaseModel.Store.TradersToDesksMap" store:Type="Tables" store:Schema="staging" store:Name="TradersToDesksMap">
+            <DefiningQuery>SELECT 
+      [TradersToDesksMap].[ToDMapId] AS [ToDMapId], 
+      [TradersToDesksMap].[TraderId] AS [TraderId], 
+      [TradersToDesksMap].[DeskId] AS [DeskId]
+      FROM [staging].[TradersToDesksMap] AS [TradersToDesksMap]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Trades" EntityType="DestSQLDatabaseModel.Store.Trades" store:Type="Tables" store:Schema="staging" store:Name="Trades">
+            <DefiningQuery>SELECT 
+      [Trades].[ExecutionId] AS [ExecutionId], 
+      [Trades].[TimeStamp] AS [TimeStamp], 
+      [Trades].[Side] AS [Side], 
+      [Trades].[TraderDeskMapId] AS [TraderDeskMapId], 
+      [Trades].[SymbolId] AS [SymbolId], 
+      [Trades].[CustomerId] AS [CustomerId], 
+      [Trades].[Price] AS [Price], 
+      [Trades].[Size] AS [Size]
+      FROM [staging].[Trades] AS [Trades]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="DimSide">
+          <Key>
+            <PropertyRef Name="SideKey" />
+          </Key>
+          <Property Name="SideKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SideValue" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DimSymbol">
+          <Key>
+            <PropertyRef Name="SymbolKey" />
+          </Key>
+          <Property Name="SymbolKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SymbolValue" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="FactTrades">
+          <Key>
+            <PropertyRef Name="TradeKey" />
+          </Key>
+          <Property Name="TradeKey" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ExecutionTimeKey" Type="datetime" Nullable="false" />
+          <Property Name="SideKey" Type="int" Nullable="false" />
+          <Property Name="SymbolKey" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Size" Type="float" Nullable="false" />
+          <Property Name="ExchangeFee" Type="money" Nullable="false" />
+          <Property Name="BrokerFee" Type="money" Nullable="false" />
+          <Property Name="SECFee" Type="money" Nullable="false" />
+          <Property Name="MarginFee" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Desks">
+          <Key>
+            <PropertyRef Name="DeskId" />
+          </Key>
+          <Property Name="DeskId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeskName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DestSQLDatabase.staging.SrcTableSmall' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SrcTableSmall">
+          <Key>
+            <PropertyRef Name="column_1" />
+            <PropertyRef Name="column_3" />
+          </Key>
+          <Property Name="column_1" Type="int" Nullable="false" />
+          <Property Name="column_2" Type="int" />
+          <Property Name="column_3" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Symbols">
+          <Key>
+            <PropertyRef Name="SymbolId" />
+          </Key>
+          <Property Name="SymbolId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Symbol" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Exchange" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DestSQLDatabase.staging.TradersToDesksMap' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TradersToDesksMap">
+          <Key>
+            <PropertyRef Name="ToDMapId" />
+            <PropertyRef Name="TraderId" />
+            <PropertyRef Name="DeskId" />
+          </Key>
+          <Property Name="ToDMapId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TraderId" Type="int" Nullable="false" />
+          <Property Name="DeskId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DestSQLDatabase.staging.Trades' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Trades">
+          <Key>
+            <PropertyRef Name="ExecutionId" />
+            <PropertyRef Name="TimeStamp" />
+            <PropertyRef Name="Side" />
+            <PropertyRef Name="TraderDeskMapId" />
+            <PropertyRef Name="SymbolId" />
+            <PropertyRef Name="CustomerId" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="Size" />
+          </Key>
+          <Property Name="ExecutionId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="Side" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TraderDeskMapId" Type="int" Nullable="false" />
+          <Property Name="SymbolId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Size" Type="float" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProductDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ProductEF" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DimSides" EntityType="ProductDB.DimSide" />
+          <EntitySet Name="DimSymbols" EntityType="ProductDB.DimSymbol" />
+          <EntitySet Name="FactTrades" EntityType="ProductDB.FactTrade" />
+          <EntitySet Name="Accounts" EntityType="ProductDB.Account" />
+          <EntitySet Name="Desks" EntityType="ProductDB.Desk" />
+          <EntitySet Name="SrcTableSmalls" EntityType="ProductDB.SrcTableSmall" />
+          <EntitySet Name="Symbols" EntityType="ProductDB.Symbol" />
+          <EntitySet Name="TradersToDesksMaps" EntityType="ProductDB.TradersToDesksMap" />
+          <EntitySet Name="Trades" EntityType="ProductDB.Trade" />
+        </EntityContainer>
+        <EntityType Name="DimSide">
+          <Key>
+            <PropertyRef Name="SideKey" />
+          </Key>
+          <Property Name="SideKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SideValue" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DimSymbol">
+          <Key>
+            <PropertyRef Name="SymbolKey" />
+          </Key>
+          <Property Name="SymbolKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SymbolValue" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FactTrade">
+          <Key>
+            <PropertyRef Name="TradeKey" />
+          </Key>
+          <Property Name="TradeKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExecutionTimeKey" Type="DateTime" Nullable="false" />
+          <Property Name="SideKey" Type="Int32" Nullable="false" />
+          <Property Name="SymbolKey" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Size" Type="Double" Nullable="false" />
+          <Property Name="ExchangeFee" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="BrokerFee" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SECFee" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="MarginFee" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Desk">
+          <Key>
+            <PropertyRef Name="DeskId" />
+          </Key>
+          <Property Name="DeskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeskName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SrcTableSmall">
+          <Key>
+            <PropertyRef Name="column_1" />
+            <PropertyRef Name="column_3" />
+          </Key>
+          <Property Name="column_1" Type="Int32" Nullable="false" />
+          <Property Name="column_2" Type="Int32" />
+          <Property Name="column_3" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Symbol">
+          <Key>
+            <PropertyRef Name="SymbolId" />
+          </Key>
+          <Property Name="SymbolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Symbol1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Exchange" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TradersToDesksMap">
+          <Key>
+            <PropertyRef Name="ToDMapId" />
+            <PropertyRef Name="TraderId" />
+            <PropertyRef Name="DeskId" />
+          </Key>
+          <Property Name="ToDMapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TraderId" Type="Int32" Nullable="false" />
+          <Property Name="DeskId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Trade">
+          <Key>
+            <PropertyRef Name="ExecutionId" />
+            <PropertyRef Name="TimeStamp" />
+            <PropertyRef Name="Side" />
+            <PropertyRef Name="TraderDeskMapId" />
+            <PropertyRef Name="SymbolId" />
+            <PropertyRef Name="CustomerId" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="Size" />
+          </Key>
+          <Property Name="ExecutionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+          <Property Name="Side" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TraderDeskMapId" Type="Int32" Nullable="false" />
+          <Property Name="SymbolId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Size" Type="Double" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DestSQLDatabaseModelStoreContainer" CdmEntityContainer="ProductEF">
+          <EntitySetMapping Name="DimSides"><EntityTypeMapping TypeName="ProductDB.DimSide"><MappingFragment StoreEntitySet="DimSide">
+            <ScalarProperty Name="SideKey" ColumnName="SideKey" />
+            <ScalarProperty Name="SideValue" ColumnName="SideValue" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DimSymbols"><EntityTypeMapping TypeName="ProductDB.DimSymbol"><MappingFragment StoreEntitySet="DimSymbol">
+            <ScalarProperty Name="SymbolKey" ColumnName="SymbolKey" />
+            <ScalarProperty Name="SymbolValue" ColumnName="SymbolValue" />
+            <ScalarProperty Name="FullName" ColumnName="FullName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FactTrades"><EntityTypeMapping TypeName="ProductDB.FactTrade"><MappingFragment StoreEntitySet="FactTrades">
+            <ScalarProperty Name="TradeKey" ColumnName="TradeKey" />
+            <ScalarProperty Name="ExecutionTimeKey" ColumnName="ExecutionTimeKey" />
+            <ScalarProperty Name="SideKey" ColumnName="SideKey" />
+            <ScalarProperty Name="SymbolKey" ColumnName="SymbolKey" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="Size" ColumnName="Size" />
+            <ScalarProperty Name="ExchangeFee" ColumnName="ExchangeFee" />
+            <ScalarProperty Name="BrokerFee" ColumnName="BrokerFee" />
+            <ScalarProperty Name="SECFee" ColumnName="SECFee" />
+            <ScalarProperty Name="MarginFee" ColumnName="MarginFee" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Accounts"><EntityTypeMapping TypeName="ProductDB.Account"><MappingFragment StoreEntitySet="Accounts">
+            <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+            <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Desks"><EntityTypeMapping TypeName="ProductDB.Desk"><MappingFragment StoreEntitySet="Desks">
+            <ScalarProperty Name="DeskId" ColumnName="DeskId" />
+            <ScalarProperty Name="DeskName" ColumnName="DeskName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SrcTableSmalls"><EntityTypeMapping TypeName="ProductDB.SrcTableSmall"><MappingFragment StoreEntitySet="SrcTableSmall">
+            <ScalarProperty Name="column_1" ColumnName="column_1" />
+            <ScalarProperty Name="column_2" ColumnName="column_2" />
+            <ScalarProperty Name="column_3" ColumnName="column_3" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Symbols"><EntityTypeMapping TypeName="ProductDB.Symbol"><MappingFragment StoreEntitySet="Symbols">
+            <ScalarProperty Name="SymbolId" ColumnName="SymbolId" />
+            <ScalarProperty Name="Symbol1" ColumnName="Symbol" />
+            <ScalarProperty Name="FullName" ColumnName="FullName" />
+            <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TradersToDesksMaps"><EntityTypeMapping TypeName="ProductDB.TradersToDesksMap"><MappingFragment StoreEntitySet="TradersToDesksMap">
+            <ScalarProperty Name="ToDMapId" ColumnName="ToDMapId" />
+            <ScalarProperty Name="TraderId" ColumnName="TraderId" />
+            <ScalarProperty Name="DeskId" ColumnName="DeskId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Trades"><EntityTypeMapping TypeName="ProductDB.Trade"><MappingFragment StoreEntitySet="Trades">
+            <ScalarProperty Name="ExecutionId" ColumnName="ExecutionId" />
+            <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+            <ScalarProperty Name="Side" ColumnName="Side" />
+            <ScalarProperty Name="TraderDeskMapId" ColumnName="TraderDeskMapId" />
+            <ScalarProperty Name="SymbolId" ColumnName="SymbolId" />
+            <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="Size" ColumnName="Size" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ProductDB">
+        <EntityTypeShape EntityType="ProductDB.DimSide" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583331" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductDB.DimSymbol" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductDB.FactTrade" Width="1.5" PointX="0.75" PointY="3.75" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductDB.Account" Width="1.5" PointX="2.75" PointY="3.75" Height="1.4033821614583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductDB.Desk" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductDB.SrcTableSmall" Width="1.5" PointX="4.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductDB.Symbol" Width="1.5" PointX="6.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductDB.TradersToDesksMap" Width="1.5" PointX="2.75" PointY="6.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductDB.Trade" Width="1.5" PointX="6.75" PointY="3.75" Height="2.5571907552083317" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
