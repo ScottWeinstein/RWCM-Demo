@@ -15,7 +15,7 @@
 
     public class MvcApplication : HttpApplication
     {
-        private IContainer _Container;
+        private static IContainer _Container;
 
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
@@ -42,9 +42,11 @@
             AreaRegistration.RegisterAllAreas();
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-            //this.BeginRequest += LogReq;
-            //this.EndRequest += LogReq;
-            //this.LogRequest += LogReq;
+        }
+
+        void Application_BeginRequest(object sender, EventArgs e)
+        {
+            LogReq(sender, e);
         }
 
         private void LogReq(object sender, EventArgs e)
@@ -74,8 +76,6 @@
                 });
         }
 
-        
-
         public ContainerBuilder BuildAutofac(bool isTestLoad = false)
         {
             var builder = new ContainerBuilder();
@@ -94,7 +94,6 @@
 
             builder.Register<DemoConfig>(ctx =>
             {
-                //                var server = ctx.Resolve<HttpServerUtilityBase>();
                 var env = ConfigurationManager.AppSettings["Env"];
                 var cll = new Services.ConfigLoader(env, serverMapPath);
                 return cll.DemoConfig;
@@ -104,10 +103,5 @@
 
             return builder;
         }
-
-
-
-
-        
     }
 }
