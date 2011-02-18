@@ -95,6 +95,7 @@
     <Compile Include="Services\EnvEvaluator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Env.xml" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -117,10 +118,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Scripts\Get-Config.ps1">
-      <Link>Get-Config.ps1</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

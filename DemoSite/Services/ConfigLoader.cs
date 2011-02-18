@@ -71,10 +71,17 @@
         
         private Tuple<string, IDisposable> GetScriptFile()
         {
-            var scriptFile = Path.GetTempFileName();
-            scriptFile = Path.ChangeExtension(scriptFile, "ps1");
+            var path = Path.GetTempPath();
+            var scriptFile = Path.Combine(path, "Get-Config.ps1");
+            var modFile = Path.Combine(path, "DPAPI.psm1");
             File.WriteAllBytes(scriptFile, Properties.Resources.Get_Config);
-            return new Tuple<string, IDisposable>(scriptFile, System.Disposables.Disposable.Create(() => File.Delete(scriptFile)));
+            File.WriteAllBytes(modFile, Properties.Resources.DPAPI);
+
+            return new Tuple<string, IDisposable>(scriptFile, System.Disposables.Disposable.Create(() =>
+            {
+                File.Delete(scriptFile);
+                File.Delete(modFile);
+            }));
         }
     }
 }

@@ -3,6 +3,7 @@
 /DemoSite/Content/themes/
 /DemoSite/Scripts/
 /DemoSite/bin/
+/DemoSite/DemoSite.Publish.xml
 *obj/
 *.csproj.user
 StyleCop.Cache

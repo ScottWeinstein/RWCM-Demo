@@ -8,12 +8,14 @@
     public class DiagStatusItem
     {
         public string Name { get; set; }
+
         public string Value { get; set; }
+
         public string Exception { get; set; }
+
         public bool IsOK
         {
             get { return Exception == null; }
         }
-        
     }
 }

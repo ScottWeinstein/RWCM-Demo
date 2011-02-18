@@ -1,13 +1,7 @@
-using System.Threading;
-
 namespace DemoSite.Services
 {
     using System;
-    using System.Management.Automation;
-    using System.Management.Automation.Runspaces;
-    using System.Collections.ObjectModel;
     using System.IO;
-    using System.Collections;
     using DemoSite.Models;
     using System.Collections.Generic;
     using System.Linq.Expressions;
@@ -21,7 +15,7 @@ namespace DemoSite.Services
             dstats.Add(EvaluateFilesystemPath(() => config.FileShare));
             dstats.Add(EvaluateSQLConnectionString(() => config.SqlCS));
 
-            return new DiagInfo(config,dstats);
+            return new DiagInfo(config, dstats);
         }
 
         public static DiagStatusItem EvaluateFilesystemPath(Expression<Func<string>> propGetter)
@@ -29,7 +23,7 @@ namespace DemoSite.Services
             var parts = GetExprParts(propGetter);
             var dinfo = new DiagStatusItem() { Name = parts.Item1, Value = parts.Item2 };
 
-            var testfile = Path.Combine(dinfo.Value,Guid.NewGuid().ToString());
+            var testfile = Path.Combine(dinfo.Value, Guid.NewGuid().ToString());
 
             try
             {
@@ -40,10 +34,11 @@ namespace DemoSite.Services
             {
                 dinfo.Exception = ex.ToString();
             }
+
             return dinfo;
         }
 
-        static DiagStatusItem EvaluateSQLConnectionString(Expression<Func<string>> propGetter)
+        public static DiagStatusItem EvaluateSQLConnectionString(Expression<Func<string>> propGetter)
         {
             var parts = GetExprParts(propGetter);
             var dinfo = new DiagStatusItem() { Name = parts.Item1, Value = parts.Item2 };
@@ -59,8 +54,10 @@ namespace DemoSite.Services
             {
                 dinfo.Exception = ex.ToString();
             }
+
             return dinfo;
         }
+
         private static Tuple<string, T> GetExprParts<T>(Expression<Func<T>> propGetter)
         {
             var mexp = propGetter.Body as MemberExpression;
@@ -68,9 +65,10 @@ namespace DemoSite.Services
             {
                 throw new Exception("bad property");
             }
+
             var name = mexp.Member.Name;
             var value = propGetter.Compile()();
-            return Tuple.Create(name,value);
+            return Tuple.Create(name, value);
         }
     }
 }

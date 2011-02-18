@@ -1,12 +1,11 @@
-﻿using System.IO;
-namespace Tests
+﻿namespace Tests
 {
     using System;
     using Autofac;
     using DemoSite.Models;
     using Xunit;
     using DemoSite.Services;
-    using System.Linq;
+    using System.IO;
 
     public class IntegrationFacts
     {
@@ -36,6 +35,5 @@ namespace Tests
             var status = EnvEvaluator.EvaluateFilesystemPath(() => cfg.FileShare);
             Assert.True(status.IsOK);
         }
-
     }
 }

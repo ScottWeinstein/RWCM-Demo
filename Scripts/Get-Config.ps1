@@ -43,7 +43,6 @@ if ($envRaw.PasswordProtected)
 {
 	foreach ($pasF in $envRaw.PasswordProtected.Field)
 	{	
-		Write-Host $pasF -ForegroundColor Gray
 		$envRaw.$pasF = Unprotect-Data $envRaw.$pasF
 	}
 }
