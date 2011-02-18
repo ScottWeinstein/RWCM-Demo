@@ -99,6 +99,29 @@
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\WebRequestLog.table.sql">
       <SubType>Code</SubType>
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\DF_WebRequestLog_UserName.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\DF_WebRequestLog_UserHostAddress.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\DF_WebRequestLog_UserAgent.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\DF_WebRequestLog_Timestamp.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\DF_WebRequestLog_RequestUrl.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\DF_WebRequestLog_Referer.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="AutoCreatedLocal.route.sql">
+      <SubType>Code</SubType>
     </Build>
   </ItemGroup>
 </Project>

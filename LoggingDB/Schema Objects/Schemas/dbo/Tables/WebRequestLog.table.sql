@@ -4,6 +4,9 @@
     [RequestUrl]      VARCHAR (MAX) NOT NULL,
     [Referer]         VARCHAR (MAX) NOT NULL,
     [UserHostAddress] VARCHAR (226) NOT NULL,
-    [UserName]        VARCHAR (50)  NOT NULL
+    [UserName]        VARCHAR (50)  NOT NULL,
+    [Timestamp]       DATETIME2 (7) NULL
 );
+
+
 

@@ -42,12 +42,12 @@
             AreaRegistration.RegisterAllAreas();
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-            this.BeginRequest += MvcApplication_PreRequestHandlerExecute;
-            //this.LogRequest += MvcApplication_PreRequestHandlerExecute;
-//            this.PreRequestHandlerExecute 
+            //this.BeginRequest += LogReq;
+            //this.EndRequest += LogReq;
+            //this.LogRequest += LogReq;
         }
 
-        void MvcApplication_PreRequestHandlerExecute(object sender, EventArgs e)
+        private void LogReq(object sender, EventArgs e)
         {
             var app = sender as HttpApplication;
             var req = app.Request;
