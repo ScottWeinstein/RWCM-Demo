@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LoggingDB">
+  <DataContextMoniker Name="/LoggingDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b071d7bd-08a9-4144-9cc8-8d35f92b7b25" absoluteBounds="1, 1.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LoggingDBDataContext/WebRequestLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc1c981f-a86c-4486-9251-2505bc0792fa" absoluteBounds="1.0150000000000001, 1.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

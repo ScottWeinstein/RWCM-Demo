@@ -42,6 +42,11 @@
             get { return (string)_ht["ASCS"]; }
         }
 
+        public string LoggingDBConnectionString
+        {
+            get { return (string)_ht["LoggingDBConnectionString"]; }
+        }
+        
         public string Env
         {
             get { return (string)_ht["Env"]; }

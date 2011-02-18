@@ -14,6 +14,7 @@ namespace DemoSite.Services
 
             dstats.Add(EvaluateFilesystemPath(() => config.FileShare));
             dstats.Add(EvaluateSQLConnectionString(() => config.SqlCS));
+            dstats.Add(EvaluateSQLConnectionString(() => config.LoggingDBConnectionString));
 
             return new DiagInfo(config, dstats);
         }

@@ -4,6 +4,7 @@
 /DemoSite/Scripts/
 /DemoSite/bin/
 /DemoSite/DemoSite.Publish.xml
+/LoggingDB/LoggingDB.dbproj.user
 *obj/
 *.csproj.user
 StyleCop.Cache
