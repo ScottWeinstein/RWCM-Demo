@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1 @2 @22 @62)" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="IntegrationFacts" />
+    <Node Id="(@6 @12 @20 Member=(Name=GetExprParts @27 OverloadingParameters=[(@26 Namespace=System.Linq.Expressions Type=(Name=Expression @27 GenericArguments=[(@28 @29 Type=(Name=Func @27))]))]))" Category="CodeSchema_Method" CodeSchemaProperty_IsPrivate="True" Label="GetExprParts&lt;T&gt;" />
+    <Node Id="(@6 @15 @16 Member=get_Env)" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_Env" />
+    <Node Id="(@6 @15 @16 Member=get_FileShare)" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_FileShare" />
+    <Node Id="(@6 @15 @16 Member=get_IsProduction)" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_IsProduction" />
+    <Node Id="(@6 @15 @16 Member=get_MarketingASConnectionString)" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_MarketingASConnectionString" />
+    <Node Id="(@6 @15 @16 Member=get_SupportEmail)" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_SupportEmail" />
+    <Node Id="(@6 @15 @18 Member=get_AppVersion)" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_AppVersion" />
+    <Node Id="@11" Category="CodeSchema_Class" CodeSchemaProperty_IsPublic="True" Group="Collapsed" Label="AutofacContainer" />
+    <Node Id="@14" Category="CodeSchema_Class" CodeSchemaProperty_IsPublic="True" Group="Collapsed" Label="ConfigLoader" />
+    <Node Id="@17" Category="CodeSchema_Class" CodeSchemaProperty_IsPublic="True" Group="Collapsed" Label="DemoConfig" />
+    <Node Id="@19" Category="CodeSchema_Class" CodeSchemaProperty_IsPublic="True" Group="Collapsed" Label="DiagInfo" />
+    <Node Id="@21" Category="CodeSchema_Class" CodeSchemaProperty_IsPublic="True" Group="Collapsed" Label="EnvEvaluator" />
+    <Node Id="@23" Category="CodeSchema_Class" CodeSchemaProperty_IsPublic="True" Group="Collapsed" Label="IntegrationFacts" />
+    <Node Id="@25" Category="CodeSchema_Class" CodeSchemaProperty_IsPublic="True" Group="Collapsed" Label="MvcApplication" />
+    <Node Id="@3" Category="CodeSchema_Class" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Group="Collapsed" Label="AutofacContainer.&lt;&gt;c__DisplayClass3" />
+    <Node Id="@31" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="EvaluateFilesystemPath" />
+    <Node Id="@32" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="EvaluateSQLConnectionString" />
+    <Node Id="@33" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" Label="set_StatusItems" />
+    <Node Id="@35" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="ConfigLoader" />
+    <Node Id="@36" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="BuildAutofac" />
+    <Node Id="@37" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="Evaluate" />
+    <Node Id="@38" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" Label="set_Config" />
+    <Node Id="@39" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" Label="set_DemoConfig" />
+    <Node Id="@4" Category="CodeSchema_Class" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Group="Collapsed" Label="IntegrationFacts.&lt;&gt;c__DisplayClass0" />
+    <Node Id="@40" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Label="&lt;get_IsOK&gt;b__0" />
+    <Node Id="@42" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="RegisterGlobalFilters" />
+    <Node Id="@43" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="DemoConfig" />
+    <Node Id="@44" Category="CodeSchema_Method" CodeSchemaProperty_IsPrivate="True" Label="CreateDemoConfig" />
+    <Node Id="@47" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="&lt;.cctor&gt;b__0" />
+    <Node Id="@48" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Label="&lt;.cctor&gt;b__1" />
+    <Node Id="@49" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="&lt;BuildAutofac&gt;b__3" />
+    <Node Id="@5" Category="CodeSchema_Class" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Group="Collapsed" Label="IntegrationFacts.&lt;&gt;c__DisplayClass2" />
+    <Node Id="@50" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Label="&lt;BuildAutofac&gt;b__4" />
+    <Node Id="@51" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Label="&lt;BuildAutofac&gt;b__5" />
+    <Node Id="@52" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" Label="set_Container" />
+    <Node Id="@54" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="RegisterRoutes" />
+    <Node Id="@55" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" Label="set_AppVersion" />
+    <Node Id="@56" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="DiagInfo" />
+    <Node Id="@57" Category="CodeSchema_Method" CodeSchemaProperty_IsPrivate="True" Label="Application_BeginRequest" />
+    <Node Id="@58" Category="CodeSchema_Method" CodeSchemaProperty_IsPrivate="True" Label="LogReq" />
+    <Node Id="@59" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="ConfigLoader" />
+    <Node Id="@60" Category="CodeSchema_Method" CodeSchemaProperty_IsPrivate="True" Label="GetConfigRaw" />
+    <Node Id="@61" Category="CodeSchema_Method" CodeSchemaProperty_IsPrivate="True" CodeSchemaProperty_IsSpecialName="True" Label="static AutofacContainer" />
+    <Node Id="@63" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="&lt;&gt;c__DisplayClass3" />
+    <Node Id="@64" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="&lt;&gt;c__DisplayClass0" />
+    <Node Id="@65" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="&lt;&gt;c__DisplayClass2" />
+    <Node Id="@66" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="&lt;&gt;c__DisplayClass1" />
+    <Node Id="@67" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="&lt;&gt;c__DisplayClass8" />
+    <Node Id="@68" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="MvcApplication" />
+    <Node Id="@69" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="&lt;LogReq&gt;b__0" />
+    <Node Id="@70" Category="CodeSchema_Method" CodeSchemaProperty_IsProtected="True" Label="Application_Start" />
+    <Node Id="@71" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="Bad_filepath_is_detected" />
+    <Node Id="@72" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="Can_Integrate_with_web_autofac" />
+    <Node Id="@73" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_Config" />
+    <Node Id="@74" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_Container" />
+    <Node Id="@75" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_DemoConfig" />
+    <Node Id="@76" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_IsOK" />
+    <Node Id="@77" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_LoggingDBConnectionString" />
+    <Node Id="@78" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_ProductEFConnectionString" />
+    <Node Id="@79" Category="CodeSchema_Method" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" Label="get_StatusItems" />
+    <Node Id="@8" Category="CodeSchema_Class" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Group="Collapsed" Label="MvcApplication.&lt;&gt;c__DisplayClass1" />
+    <Node Id="@80" Category="CodeSchema_Method" CodeSchemaProperty_IsPrivate="True" Label="GetScriptFileFromEmbeddedResource" />
+    <Node Id="@81" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" Label="Good_filepath_is_validated" />
+    <Node Id="@9" Category="CodeSchema_Class" CodeSchemaProperty_IsCompilerGenerated="True" CodeSchemaProperty_IsPrivate="True" Group="Collapsed" Label="MvcApplication.&lt;&gt;c__DisplayClass8" />
+  </Nodes>
+  <Links>
+    <Link Source="@11" Target="@3" Category="Contains" />
+    <Link Source="@11" Target="@48" Category="Contains" />
+    <Link Source="@11" Target="@52" Category="Contains" />
+    <Link Source="@11" Target="@61" Category="Contains" />
+    <Link Source="@11" Target="@74" Category="Contains" />
+    <Link Source="@14" Target="@17" Category="References">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@14" Target="@35" Category="Contains" />
+    <Link Source="@14" Target="@39" Category="Contains" />
+    <Link Source="@14" Target="@44" Category="Contains" />
+    <Link Source="@14" Target="@59" Category="Contains" />
+    <Link Source="@14" Target="@60" Category="Contains" />
+    <Link Source="@14" Target="@75" Category="Contains" />
+    <Link Source="@14" Target="@80" Category="Contains" />
+    <Link Source="@17" Target="(@6 @15 @16 Member=get_Env)" Category="Contains" />
+    <Link Source="@17" Target="(@6 @15 @16 Member=get_FileShare)" Category="Contains" />
+    <Link Source="@17" Target="(@6 @15 @16 Member=get_IsProduction)" Category="Contains" />
+    <Link Source="@17" Target="(@6 @15 @16 Member=get_MarketingASConnectionString)" Category="Contains" />
+    <Link Source="@17" Target="(@6 @15 @16 Member=get_SupportEmail)" Category="Contains" />
+    <Link Source="@17" Target="@43" Category="Contains" />
+    <Link Source="@17" Target="@77" Category="Contains" />
+    <Link Source="@17" Target="@78" Category="Contains" />
+    <Link Source="@19" Target="(@6 @15 @18 Member=get_AppVersion)" Category="Contains" />
+    <Link Source="@19" Target="@17" Category="References">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@19" Target="@33" Category="Contains" />
+    <Link Source="@19" Target="@38" Category="Contains" />
+    <Link Source="@19" Target="@40" Category="Contains" />
+    <Link Source="@19" Target="@55" Category="Contains" />
+    <Link Source="@19" Target="@56" Category="Contains" />
+    <Link Source="@19" Target="@73" Category="Contains" />
+    <Link Source="@19" Target="@76" Category="Contains" />
+    <Link Source="@19" Target="@79" Category="Contains" />
+    <Link Source="@21" Target="(@6 @12 @20 Member=(Name=GetExprParts @27 OverloadingParameters=[(@26 Namespace=System.Linq.Expressions Type=(Name=Expression @27 GenericArguments=[(@28 @29 Type=(Name=Func @27))]))]))" Category="Contains" />
+    <Link Source="@21" Target="@31" Category="Contains" />
+    <Link Source="@21" Target="@32" Category="Contains" />
+    <Link Source="@21" Target="@37" Category="Contains" />
+    <Link Source="@23" Target="(@1 @2 @22 @62)" Category="Contains" />
+    <Link Source="@23" Target="@4" Category="Contains" />
+    <Link Source="@23" Target="@5" Category="Contains" />
+    <Link Source="@23" Target="@71" Category="Contains" />
+    <Link Source="@23" Target="@72" Category="Contains" />
+    <Link Source="@23" Target="@81" Category="Contains" />
+    <Link Source="@25" Target="@36" Category="Contains" />
+    <Link Source="@25" Target="@42" Category="Contains" />
+    <Link Source="@25" Target="@50" Category="Contains" />
+    <Link Source="@25" Target="@51" Category="Contains" />
+    <Link Source="@25" Target="@54" Category="Contains" />
+    <Link Source="@25" Target="@57" Category="Contains" />
+    <Link Source="@25" Target="@58" Category="Contains" />
+    <Link Source="@25" Target="@68" Category="Contains" />
+    <Link Source="@25" Target="@70" Category="Contains" />
+    <Link Source="@25" Target="@8" Category="Contains" />
+    <Link Source="@25" Target="@9" Category="Contains" />
+    <Link Source="@3" Target="@47" Category="Contains" />
+    <Link Source="@3" Target="@63" Category="Contains" />
+    <Link Source="@35" Target="@39" Category="CodeSchema_Calls" />
+    <Link Source="@35" Target="@44" Category="CodeSchema_Calls" />
+    <Link Source="@35" Target="@60" Category="CodeSchema_Calls" />
+    <Link Source="@35" Target="@80" Category="CodeSchema_Calls" />
+    <Link Source="@36" Target="@25" Category="References" />
+    <Link Source="@36" Target="@49" Category="CodeSchema_FunctionPointer" />
+    <Link Source="@36" Target="@50" Category="CodeSchema_FunctionPointer" />
+    <Link Source="@36" Target="@51" Category="CodeSchema_FunctionPointer" />
+    <Link Source="@36" Target="@67" Category="CodeSchema_Calls" />
+    <Link Source="@36" Target="@9" Category="References">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_FunctionPointer" />
+    </Link>
+    <Link Source="@37" Target="@19" Category="References">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@37" Target="@31" Category="CodeSchema_Calls" />
+    <Link Source="@37" Target="@32" Category="CodeSchema_Calls" />
+    <Link Source="@37" Target="@56" Category="CodeSchema_Calls" />
+    <Link Source="@4" Target="@17" Category="References" />
+    <Link Source="@4" Target="@64" Category="Contains" />
+    <Link Source="@44" Target="@17" Category="References">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@44" Target="@43" Category="CodeSchema_Calls" />
+    <Link Source="@47" Target="@14" Category="References">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@47" Target="@35" Category="CodeSchema_Calls" />
+    <Link Source="@48" Target="@17" Category="References">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@48" Target="@75" Category="CodeSchema_Calls" />
+    <Link Source="@49" Target="@14" Category="References" />
+    <Link Source="@49" Target="@17" Category="References">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@49" Target="@59" Category="CodeSchema_Calls" />
+    <Link Source="@49" Target="@75" Category="CodeSchema_Calls" />
+    <Link Source="@5" Target="@17" Category="References" />
+    <Link Source="@5" Target="@65" Category="Contains" />
+    <Link Source="@50" Target="@77" Category="CodeSchema_Calls" />
+    <Link Source="@51" Target="@78" Category="CodeSchema_Calls" />
+    <Link Source="@56" Target="@33" Category="CodeSchema_Calls" />
+    <Link Source="@56" Target="@38" Category="CodeSchema_Calls" />
+    <Link Source="@56" Target="@55" Category="CodeSchema_Calls" />
+    <Link Source="@57" Target="@58" Category="CodeSchema_Calls" />
+    <Link Source="@58" Target="@66" Category="CodeSchema_Calls" />
+    <Link Source="@58" Target="@69" Category="CodeSchema_FunctionPointer" />
+    <Link Source="@58" Target="@8" Category="References">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_FunctionPointer" />
+    </Link>
+    <Link Source="@59" Target="@39" Category="CodeSchema_Calls" />
+    <Link Source="@59" Target="@44" Category="CodeSchema_Calls" />
+    <Link Source="@59" Target="@60" Category="CodeSchema_Calls" />
+    <Link Source="@61" Target="@25" Category="References" />
+    <Link Source="@61" Target="@3" Category="References">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_FunctionPointer" />
+    </Link>
+    <Link Source="@61" Target="@36" Category="CodeSchema_Calls" />
+    <Link Source="@61" Target="@47" Category="CodeSchema_FunctionPointer" />
+    <Link Source="@61" Target="@48" Category="CodeSchema_FunctionPointer" />
+    <Link Source="@61" Target="@52" Category="CodeSchema_Calls" />
+    <Link Source="@61" Target="@63" Category="CodeSchema_Calls" />
+    <Link Source="@61" Target="@68" Category="CodeSchema_Calls" />
+    <Link Source="@69" Target="@25" Category="References" />
+    <Link Source="@70" Target="@36" Category="CodeSchema_Calls" />
+    <Link Source="@70" Target="@42" Category="CodeSchema_Calls" />
+    <Link Source="@70" Target="@54" Category="CodeSchema_Calls" />
+    <Link Source="@71" Target="@31" Category="CodeSchema_Calls" />
+    <Link Source="@71" Target="@4" Category="References">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@71" Target="@43" Category="CodeSchema_Calls" />
+    <Link Source="@71" Target="@64" Category="CodeSchema_Calls" />
+    <Link Source="@72" Target="@17" Category="References" />
+    <Link Source="@72" Target="@74" Category="CodeSchema_Calls" />
+    <Link Source="@73" Target="@17" Category="References">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@75" Target="@17" Category="References">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@76" Target="@40" Category="CodeSchema_FunctionPointer" />
+    <Link Source="@76" Target="@79" Category="CodeSchema_Calls" />
+    <Link Source="@8" Target="@66" Category="Contains" />
+    <Link Source="@8" Target="@69" Category="Contains" />
+    <Link Source="@81" Target="@31" Category="CodeSchema_Calls" />
+    <Link Source="@81" Target="@43" Category="CodeSchema_Calls" />
+    <Link Source="@81" Target="@5" Category="References">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@81" Target="@65" Category="CodeSchema_Calls" />
+    <Link Source="@9" Target="@49" Category="Contains" />
+    <Link Source="@9" Target="@67" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Block" Label="Block" BasedOn="CodeSchema_Statement" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" IsProviderRoot="False" NavigationActionLabel="Blocks" />
+    <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
+    <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" IsProviderRoot="False" NavigationActionLabel="Classes" />
+    <Category Id="CodeSchema_FunctionPointer" Label="Function Pointer" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Function Pointers" OutgoingActionLabel="Function Pointers" />
+    <Category Id="CodeSchema_Member" Label="Member" BasedOn="CodeSchema_Block" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" IsProviderRoot="False" NavigationActionLabel="Members" />
+    <Category Id="CodeSchema_Method" Label="Method" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Link:Forward:CodeSchema_Calls" Icon="CodeSchema_Method" IsProviderRoot="False" NavigationActionLabel="Methods" />
+    <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
+    <Category Id="CodeSchema_Statement" Label="Statement" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" IsProviderRoot="False" NavigationActionLabel="Statement" />
+    <Category Id="CodeSchema_Type" Label="Type" BasedOn="CodeSchema_Block" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" IsProviderRoot="False" NavigationActionLabel="Types" />
+    <Category Id="Contains" Label="Contains" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+  </Categories>
+  <Properties>
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsCompilerGenerated" Label="IsCompilerGenerated" Description="IsCompilerGenerated" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsConstructor" Label="IsConstructor" Description="IsConstructor" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPrivate" Label="IsPrivate" Description="IsPrivate" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsProtected" Label="IsProtected" Description="IsProtected" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPublic" Label="IsPublic" Description="IsPublic" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsSpecialName" Label="IsSpecialName" Description="IsSpecialName" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.Progression.GraphModel.GroupStyle" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="GenericArguments" Label="Generic Arguments" ValueType="Microsoft.VisualStudio.Progression.GraphModel.QualifiedIdentifierArrayCollection" />
+    <Name Id="GenericParameterCount" Label="Generic Parameter Count" ValueType="System.String" />
+    <Name Id="Member" Label="Member" ValueType="System.Object" />
+    <Name Id="Name" Label="Name" ValueType="System.String" />
+    <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
+    <Name Id="OverloadingParameters" Label="Parameter" ValueType="Microsoft.VisualStudio.Progression.GraphModel.QualifiedIdentifierArrayCollection" Formatter="NameValueNoEscape" />
+    <Name Id="ParentType" Label="Parent Type" ValueType="System.Object" />
+    <Name Id="Type" Label="Type" ValueType="System.Object" />
+  </QualifiedNames>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Assembly" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#1C3068" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Namespace" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#4A65A0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Type" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#D3DCEF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Method" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Method')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Generics" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Generics')" />
+      <Setter Property="Background" Value="#FFA080A0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Externals" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FFA08080" />
+    </Style>
+  </Styles>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(df286ab3-64f8-45e4-a217-4f2993908054.OutputPathUri)" />
+    <Alias n="2" Id="Namespace=Tests" />
+    <Alias n="3" Id="(@1 @2 Type=(Name=&lt;&gt;c__DisplayClass3 ParentType=AutofacContainer))" />
+    <Alias n="4" Id="(@1 @2 Type=(Name=&lt;&gt;c__DisplayClass0 ParentType=IntegrationFacts))" />
+    <Alias n="5" Id="(@1 @2 Type=(Name=&lt;&gt;c__DisplayClass2 ParentType=IntegrationFacts))" />
+    <Alias n="6" Uri="Assembly=$(5030b063-95a9-49e2-a4b9-75539c96b356.OutputPathUri)" />
+    <Alias n="7" Id="Namespace=DemoSite" />
+    <Alias n="8" Id="(@6 @7 Type=(Name=&lt;&gt;c__DisplayClass1 ParentType=MvcApplication))" />
+    <Alias n="9" Id="(@6 @7 Type=(Name=&lt;&gt;c__DisplayClass8 ParentType=MvcApplication))" />
+    <Alias n="10" Id="Type=AutofacContainer" />
+    <Alias n="11" Id="(@1 @2 @10)" />
+    <Alias n="12" Id="Namespace=DemoSite.Services" />
+    <Alias n="13" Id="Type=ConfigLoader" />
+    <Alias n="14" Id="(@6 @12 @13)" />
+    <Alias n="15" Id="Namespace=DemoSite.Models" />
+    <Alias n="16" Id="Type=DemoConfig" />
+    <Alias n="17" Id="(@6 @15 @16)" />
+    <Alias n="18" Id="Type=DiagInfo" />
+    <Alias n="19" Id="(@6 @15 @18)" />
+    <Alias n="20" Id="Type=EnvEvaluator" />
+    <Alias n="21" Id="(@6 @12 @20)" />
+    <Alias n="22" Id="Type=IntegrationFacts" />
+    <Alias n="23" Id="(@1 @2 @22)" />
+    <Alias n="24" Id="Type=MvcApplication" />
+    <Alias n="25" Id="(@6 @7 @24)" />
+    <Alias n="26" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.0/System.Core.dll" />
+    <Alias n="27" Id="GenericParameterCount=1" />
+    <Alias n="28" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.0/mscorlib.dll" />
+    <Alias n="29" Id="Namespace=System" />
+    <Alias n="30" Id="(@28 @29 Type=String)" />
+    <Alias n="31" Id="(@6 @12 @20 Member=(Name=EvaluateFilesystemPath OverloadingParameters=[(@26 Namespace=System.Linq.Expressions Type=(Name=Expression @27 GenericArguments=[(@28 @29 Type=(Name=Func @27 GenericArguments=[@30]))]))]))" />
+    <Alias n="32" Id="(@6 @12 @20 Member=(Name=EvaluateSQLConnectionString OverloadingParameters=[(@26 Namespace=System.Linq.Expressions Type=(Name=Expression @27 GenericArguments=[(@28 @29 Type=(Name=Func @27 GenericArguments=[@30]))]))]))" />
+    <Alias n="33" Id="(@6 @15 @18 Member=(Name=set_StatusItems OverloadingParameters=[(@28 Namespace=System.Collections.Generic Type=(Name=IEnumerable @27 GenericArguments=[(@6 @15 Type=DiagStatusItem)]))]))" />
+    <Alias n="34" Id="Name=.ctor" />
+    <Alias n="35" Id="(@6 @12 @13 Member=(@34 OverloadingParameters=[(@28 @29 Type=(Name=Tuple GenericParameterCount=2 GenericArguments=[@30,@30]))]))" />
+    <Alias n="36" Id="(@6 @7 @24 Member=(Name=BuildAutofac OverloadingParameters=[(@28 @29 Type=Boolean)]))" />
+    <Alias n="37" Id="(@6 @12 @20 Member=(Name=Evaluate OverloadingParameters=[@17]))" />
+    <Alias n="38" Id="(@6 @15 @18 Member=(Name=set_Config OverloadingParameters=[@17]))" />
+    <Alias n="39" Id="(@6 @12 @13 Member=(Name=set_DemoConfig OverloadingParameters=[@17]))" />
+    <Alias n="40" Id="(@6 @15 @18 Member=(Name=&lt;get_IsOK&gt;b__0 OverloadingParameters=[(@6 @15 Type=DiagStatusItem)]))" />
+    <Alias n="41" Uri="Assembly=$(VsSolutionUri)/packages/MVC3/System.Web.Mvc.dll" />
+    <Alias n="42" Id="(@6 @7 @24 Member=(Name=RegisterGlobalFilters OverloadingParameters=[(@41 Namespace=System.Web.Mvc Type=GlobalFilterCollection)]))" />
+    <Alias n="43" Id="(@6 @15 @16 Member=(@34 OverloadingParameters=[(@28 Namespace=System.Collections Type=Hashtable)]))" />
+    <Alias n="44" Id="(@6 @12 @13 Member=(Name=CreateDemoConfig OverloadingParameters=[(@28 Namespace=System.Collections Type=Hashtable)]))" />
+    <Alias n="45" Uri="Assembly=$(VsSolutionUri)/packages/Autofac.2.4.4.705/lib/NET40/Autofac.dll" />
+    <Alias n="46" Id="OverloadingParameters=[(@45 Namespace=Autofac Type=IComponentContext)]" />
+    <Alias n="47" Id="(@1 @2 Type=(Name=&lt;&gt;c__DisplayClass3 ParentType=AutofacContainer) Member=(Name=&lt;.cctor&gt;b__0 @46))" />
+    <Alias n="48" Id="(@1 @2 @10 Member=(Name=&lt;.cctor&gt;b__1 @46))" />
+    <Alias n="49" Id="(@6 @7 Type=(Name=&lt;&gt;c__DisplayClass8 ParentType=MvcApplication) Member=(Name=&lt;BuildAutofac&gt;b__3 @46))" />
+    <Alias n="50" Id="(@6 @7 @24 Member=(Name=&lt;BuildAutofac&gt;b__4 @46))" />
+    <Alias n="51" Id="(@6 @7 @24 Member=(Name=&lt;BuildAutofac&gt;b__5 @46))" />
+    <Alias n="52" Id="(@1 @2 @10 Member=(Name=set_Container OverloadingParameters=[(@45 Namespace=Autofac Type=IContainer)]))" />
+    <Alias n="53" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.0/System.Web.dll" />
+    <Alias n="54" Id="(@6 @7 @24 Member=(Name=RegisterRoutes OverloadingParameters=[(@53 Namespace=System.Web.Routing Type=RouteCollection)]))" />
+    <Alias n="55" Id="(@6 @15 @18 Member=(Name=set_AppVersion OverloadingParameters=[@30]))" />
+    <Alias n="56" Id="(@6 @15 @18 Member=(@34 OverloadingParameters=[@17,(@28 Namespace=System.Collections.Generic Type=(Name=List @27 GenericArguments=[(@6 @15 Type=DiagStatusItem)]))]))" />
+    <Alias n="57" Id="(@6 @7 @24 Member=(Name=Application_BeginRequest OverloadingParameters=[(@28 @29 Type=Object),(@28 @29 Type=EventArgs)]))" />
+    <Alias n="58" Id="(@6 @7 @24 Member=(Name=LogReq OverloadingParameters=[(@28 @29 Type=Object),(@28 @29 Type=EventArgs)]))" />
+    <Alias n="59" Id="(@6 @12 @13 Member=(@34 OverloadingParameters=[@30,@30]))" />
+    <Alias n="60" Id="(@6 @12 @13 Member=(Name=GetConfigRaw OverloadingParameters=[@30,@30,@30]))" />
+    <Alias n="61" Id="(@1 @2 @10 Member=.cctor)" />
+    <Alias n="62" Id="Member=.ctor" />
+    <Alias n="63" Id="(@1 @2 Type=(Name=&lt;&gt;c__DisplayClass3 ParentType=AutofacContainer) @62)" />
+    <Alias n="64" Id="(@1 @2 Type=(Name=&lt;&gt;c__DisplayClass0 ParentType=IntegrationFacts) @62)" />
+    <Alias n="65" Id="(@1 @2 Type=(Name=&lt;&gt;c__DisplayClass2 ParentType=IntegrationFacts) @62)" />
+    <Alias n="66" Id="(@6 @7 Type=(Name=&lt;&gt;c__DisplayClass1 ParentType=MvcApplication) @62)" />
+    <Alias n="67" Id="(@6 @7 Type=(Name=&lt;&gt;c__DisplayClass8 ParentType=MvcApplication) @62)" />
+    <Alias n="68" Id="(@6 @7 @24 @62)" />
+    <Alias n="69" Id="(@6 @7 Type=(Name=&lt;&gt;c__DisplayClass1 ParentType=MvcApplication) Member=&lt;LogReq&gt;b__0)" />
+    <Alias n="70" Id="(@6 @7 @24 Member=Application_Start)" />
+    <Alias n="71" Id="(@1 @2 @22 Member=Bad_filepath_is_detected)" />
+    <Alias n="72" Id="(@1 @2 @22 Member=Can_Integrate_with_web_autofac)" />
+    <Alias n="73" Id="(@6 @15 @18 Member=get_Config)" />
+    <Alias n="74" Id="(@1 @2 @10 Member=get_Container)" />
+    <Alias n="75" Id="(@6 @12 @13 Member=get_DemoConfig)" />
+    <Alias n="76" Id="(@6 @15 @18 Member=get_IsOK)" />
+    <Alias n="77" Id="(@6 @15 @16 Member=get_LoggingDBConnectionString)" />
+    <Alias n="78" Id="(@6 @15 @16 Member=get_ProductEFConnectionString)" />
+    <Alias n="79" Id="(@6 @15 @18 Member=get_StatusItems)" />
+    <Alias n="80" Id="(@6 @12 @13 Member=GetScriptFileFromEmbeddedResource)" />
+    <Alias n="81" Id="(@1 @2 @22 Member=Good_filepath_is_validated)" />
+  </IdentifierAliases>
+  <Paths>
+    <Path Id="5030b063-95a9-49e2-a4b9-75539c96b356.OutputPathUri" Value="file:///C:/Users/Scott/Documents/d/GitHub/RWCM-Demo/DemoSite/bin/DemoSite.dll" />
+    <Path Id="df286ab3-64f8-45e4-a217-4f2993908054.OutputPathUri" Value="file:///C:/Users/Scott/Documents/d/GitHub/RWCM-Demo/bin/Debug/Tests.dll" />
+    <Path Id="FxReferenceAssembliesUri" Value="file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework" />
+    <Path Id="VsSolutionUri" Value="file:///C:/Users/Scott/Documents/d/GitHub/RWCM-Demo" />
+  </Paths>
+</DirectedGraph>

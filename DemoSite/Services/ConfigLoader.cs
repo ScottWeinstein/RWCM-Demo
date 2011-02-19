@@ -16,8 +16,8 @@
 
         public ConfigLoader(string env, string location)
         {
-            var scriptFile = Path.Combine(location, @"..\Scripts\Get-Config.ps1");
-            DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFile));
+            var scriptFilePath = Path.Combine(location, @"..\Scripts\Get-Config.ps1");
+            DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFilePath));
         }
 
         public ConfigLoader(Tuple<string, string> args /* to work-around powershell bug in method resolve*/)
@@ -25,11 +25,11 @@
             var env = args.Item1;
             var xmlDefn = args.Item2;
 
-            var sfd = GetScriptFile();
-            var scriptFile = sfd.Item1;
+            var sfd = GetScriptFileFromEmbeddedResource();
+            var scriptFilePath = sfd.Item1;
             using (sfd.Item2)
             {
-                DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFile, xmlDefn));
+                DemoConfig = CreateDemoConfig(GetConfigRaw(env, scriptFilePath, xmlDefn));
             }
         }
 
@@ -38,13 +38,13 @@
             return new DemoConfig(ht);
         }
 
-        private Hashtable GetConfigRaw(string env, string scriptFile, string xmlDefn = null)
+        private Hashtable GetConfigRaw(string env, string scriptFilePath, string xmlDefn = null)
         {
             using (var runspace = RunspaceFactory.CreateRunspace())
             {
                 using (var pipeline = runspace.CreatePipeline())
                 {
-                    var getConfigCmd = new Command(scriptFile);
+                    var getConfigCmd = new Command(scriptFilePath);
                     var envParam = new CommandParameter("Env", env);
                     getConfigCmd.Parameters.Add(envParam);
 
@@ -69,7 +69,7 @@
             }
         }
         
-        private Tuple<string, IDisposable> GetScriptFile()
+        private Tuple<string, IDisposable> GetScriptFileFromEmbeddedResource()
         {
             var path = Path.GetTempPath();
             var scriptFile = Path.Combine(path, "Get-Config.ps1");
